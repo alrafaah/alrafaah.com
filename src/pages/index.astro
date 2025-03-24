@@ -59,12 +59,23 @@ const products = [
         position: sticky;
         top: 0;
         z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header img {
+        max-height: 50px;
+      }
+
+      header nav {
+        display: flex;
+        gap: 20px;
       }
 
       header nav a {
         color: white;
         font-size: 18px;
-        margin: 0 20px;
         text-decoration: none;
         text-transform: uppercase;
         transition: color 0.3s ease;
@@ -186,6 +197,11 @@ const products = [
         .product-card span {
           font-size: 1rem;
         }
+
+        header nav {
+          flex-direction: column;
+          gap: 10px;
+        }
       }
     </style>
   </head>
@@ -193,6 +209,7 @@ const products = [
   <body>
     <!-- Header Section -->
     <header>
+      <img src="/alrafaah-international-llc-logo-01.png" alt="Al Rafaah International LLC Logo" />
       <nav>
         <a href="/">Home</a>
         <a href="#cart">Cart</a>
