@@ -1,27 +1,31 @@
 ---
-import { products } from '../content/products';
-
 const SITE_TITLE = "Al Rafaah International LLC";
 const SITE_DESCRIPTION = "Your trusted e-commerce partner for quality products.";
 
-// Mock product data (you can move this to a separate file later)
+// Mock product data (embedded in the file to avoid missing imports)
 const products = [
   {
     id: 1,
     name: "Product 1",
     price: 29.99,
-    image: "/images/product1.jpg",
+    image: "/images/product1.jpg",  // Ensure these images exist in your /public/images folder
     description: "A great product for all your needs."
   },
   {
     id: 2,
     name: "Product 2",
     price: 39.99,
-    image: "/images/product2.jpg",
+    image: "/images/product2.jpg",  // Ensure these images exist in your /public/images folder
     description: "Another excellent choice for everyone."
   },
-  // Add more products as needed
-};
+  {
+    id: 3,
+    name: "Product 3",
+    price: 49.99,
+    image: "/images/product3.jpg",  // Ensure these images exist in your /public/images folder
+    description: "An affordable yet top-quality item."
+  }
+];
 ---
 
 <!DOCTYPE html>
