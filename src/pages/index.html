@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Alrafaah International LLC - E-commerce</title>
+    <title>Alrafaah International LLC</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Basic Reset */
@@ -15,204 +16,183 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
         }
 
-        /* Header Section */
+        /* Header */
         header {
-            background-color: #131921;
-            color: white;
-            padding: 15px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: #131921;
+            padding: 15px 20px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .logo img {
-            width: 150px;
-            height: auto;
+        header .logo img {
+            height: 50px;
         }
 
-        nav ul {
+        header nav ul {
             display: flex;
-            list-style: none;
             gap: 20px;
+            list-style: none;
         }
 
-        nav ul li a {
+        header nav ul li a {
             color: white;
             text-decoration: none;
             font-size: 16px;
+            font-weight: 500;
         }
 
-        nav ul li a:hover {
+        header nav ul li a:hover {
             text-decoration: underline;
         }
 
-        .search-bar input {
-            padding: 10px;
+        header .search-bar input {
+            padding: 10px 15px;
             width: 300px;
-            border-radius: 4px;
-            border: none;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            font-size: 16px;
         }
 
-        /* Banner Section */
-        .banner {
-            width: 100%;
-            height: 300px;
-            background: url('https://via.placeholder.com/1920x300') no-repeat center center;
+        /* Hero Section */
+        .hero-section {
+            background-image: url('https://via.placeholder.com/1920x500');
             background-size: cover;
+            background-position: center;
             text-align: center;
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 100px 20px;
         }
 
-        .banner h1 {
-            font-size: 3rem;
-            margin: 0;
+        .hero-section h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #ff9900;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e68900;
         }
 
         /* Product Section */
-        .product-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        .products-section {
             padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            justify-items: center;
         }
 
         .product-card {
             background: white;
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin: 15px;
-            width: 250px;
-            border-radius: 5px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            cursor: pointer;
+            width: 100%;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
         }
 
-        .product-img {
+        .product-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 5px;
+            border-bottom: 1px solid #ddd;
         }
 
-        .product-title {
-            font-size: 1.2rem;
-            margin: 15px 0;
+        .product-card .product-info {
+            padding: 15px;
         }
 
-        .product-price {
-            font-size: 1.1rem;
-            color: #f36f6f;
+        .product-card h3 {
+            font-size: 18px;
             margin-bottom: 10px;
+            color: #333;
         }
 
-        .add-to-cart-btn {
+        .product-card .price {
+            font-size: 16px;
+            color: #ff9900;
+            margin-bottom: 15px;
+        }
+
+        .product-card .add-to-cart-btn {
             background-color: #ff9900;
             color: white;
             padding: 10px;
             border: none;
             border-radius: 5px;
+            font-size: 14px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s;
         }
 
-        .add-to-cart-btn:hover {
+        .product-card .add-to-cart-btn:hover {
             background-color: #e68900;
         }
 
-        /* Cart Section */
-        .cart-section {
-            position: fixed;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            background-color: #ff9900;
-            padding: 20px;
-            border-radius: 5px;
-            color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .cart-button {
-            background-color: #f36f6f;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .cart-button:hover {
-            background-color: #c14e4e;
-        }
-
-        .cart-items {
-            margin-top: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .checkout-btn {
-            margin-top: 20px;
-            background-color: #ff9900;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Footer Section */
+        /* Footer */
         footer {
             background-color: #131921;
             color: white;
-            padding: 20px 0;
+            padding: 30px 20px;
             text-align: center;
         }
 
         footer p {
             font-size: 14px;
+            margin: 10px 0;
         }
 
         footer ul {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 30px;
             list-style: none;
-            margin: 10px 0;
+            margin: 20px 0;
         }
 
         footer ul li a {
             color: white;
             text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
         }
 
         footer ul li a:hover {
-            text-decoration: underline;
+            color: #ff9900;
         }
 
-        /* WhatsApp Floating Chat Button */
+        /* WhatsApp Floating Button */
         .whatsapp-btn {
             position: fixed;
             bottom: 20px;
@@ -221,18 +201,20 @@
             color: white;
             padding: 15px;
             border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             font-size: 30px;
             cursor: pointer;
-            z-index: 1000;
             transition: background-color 0.3s ease;
+            z-index: 1000;
         }
 
         .whatsapp-btn:hover {
             background-color: #128C7E;
         }
+
     </style>
 </head>
+
 <body>
 
     <!-- Header Section -->
@@ -243,10 +225,9 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Categories</a></li>
+                <li><a href="#">Shop</a></li>
                 <li><a href="#">Offers</a></li>
-                <li><a href="#">Cart</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
         <div class="search-bar">
@@ -254,49 +235,51 @@
         </div>
     </header>
 
-    <!-- Banner Section -->
-    <div class="banner">
-        <h1>Welcome to Alrafaah - Your Online Store</h1>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>Welcome to Alrafaah</h1>
+        <p>Your one-stop shop for all things premium and high-quality</p>
+        <a href="#" class="cta-button">Shop Now</a>
+    </section>
 
     <!-- Product Section -->
-    <div class="product-section" id="product-section">
-        <!-- Example Product Cards -->
-        <div class="product-card" data-id="1">
-            <img src="https://via.placeholder.com/250x200" alt="Product 1" class="product-img">
-            <h3 class="product-title">Product 1</h3>
-            <p class="product-price">$99.99</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
+    <section class="products-section">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x200" alt="Product 1">
+            <div class="product-info">
+                <h3>Product 1</h3>
+                <p class="price">$99.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
         </div>
 
-        <div class="product-card" data-id="2">
-            <img src="https://via.placeholder.com/250x200" alt="Product 2" class="product-img">
-            <h3 class="product-title">Product 2</h3>
-            <p class="product-price">$149.99</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x200" alt="Product 2">
+            <div class="product-info">
+                <h3>Product 2</h3>
+                <p class="price">$149.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
         </div>
 
-        <div class="product-card" data-id="3">
-            <img src="https://via.placeholder.com/250x200" alt="Product 3" class="product-img">
-            <h3 class="product-title">Product 3</h3>
-            <p class="product-price">$59.99</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x200" alt="Product 3">
+            <div class="product-info">
+                <h3>Product 3</h3>
+                <p class="price">$59.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
         </div>
 
-        <div class="product-card" data-id="4">
-            <img src="https://via.placeholder.com/250x200" alt="Product 4" class="product-img">
-            <h3 class="product-title">Product 4</h3>
-            <p class="product-price">$199.99</p>
-            <button class="add-to-cart-btn">Add to Cart</button>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x200" alt="Product 4">
+            <div class="product-info">
+                <h3>Product 4</h3>
+                <p class="price">$199.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
         </div>
-    </div>
-
-    <!-- Cart Section -->
-    <div class="cart-section" id="cart-section" style="display: none;">
-        <h3>Your Cart</h3>
-        <div class="cart-items" id="cart-items"></div>
-        <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
-    </div>
+    </section>
 
     <!-- Footer Section -->
     <footer>
@@ -308,67 +291,322 @@
         </ul>
     </footer>
 
-    <!-- WhatsApp Floating Chat Button -->
+    <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/96891916516" target="_blank" class="whatsapp-btn">
-        <i class="fa fa-whatsapp"></i> Chat with Anwer
+        <i class="fa fa-whatsapp"></i>
     </a>
+
+    <!-- WhatsApp for Shahin -->
     <a href="https://wa.me/96895480902" target="_blank" class="whatsapp-btn" style="bottom: 80px;">
-        <i class="fa fa-whatsapp"></i> Chat with Shahin
+        <i class="fa fa-whatsapp"></i>
     </a>
-
-    <script>
-        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-        const cartItemsContainer = document.getElementById('cart-items');
-        const cartSection = document.getElementById('cart-section');
-        const checkoutButton = document.getElementById('checkout-btn');
-
-        let cart = [];
-
-        // Add product to cart
-        addToCartButtons.forEach((button, index) => {
-            button.addEventListener('click', () => {
-                const productCard = button.parentElement;
-                const productId = productCard.dataset.id;
-                const productTitle = productCard.querySelector('.product-title').innerText;
-                const productPrice = productCard.querySelector('.product-price').innerText;
-
-                // Add product to cart array
-                const newProduct = {
-                    id: productId,
-                    title: productTitle,
-                    price: productPrice,
-                };
-
-                cart.push(newProduct);
-                updateCartUI();
-            });
-        });
-
-        // Update cart UI
-        function updateCartUI() {
-            if (cart.length > 0) {
-                cartSection.style.display = 'block';
-            } else {
-                cartSection.style.display = 'none';
-            }
-
-            cartItemsContainer.innerHTML = '';
-
-            cart.forEach(product => {
-                const productDiv = document.createElement('div');
-                productDiv.classList.add('cart-item');
-                productDiv.innerHTML = `
-                    <span>${product.title} - ${product.price}</span>
-                `;
-                cartItemsContainer.appendChild(productDiv);
-            });
-        }
-
-        // Checkout button (just a placeholder for now)
-        checkoutButton.addEventListener('click', () => {
-            alert('Proceeding to checkout...');
-        });
-    </script>
 
 </body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alrafaah International LLC</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #131921;
+            padding: 15px 20px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        header .search-bar input {
+            padding: 10px 15px;
+            width: 300px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-image: url('https://via.placeholder.com/1920x500');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            padding: 100px 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #ff9900;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e68900;
+        }
+
+        /* Product Section */
+        .products-section {
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .product-card .product-info {
+            padding: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-card .price {
+            font-size: 16px;
+            color: #ff9900;
+            margin-bottom: 15px;
+        }
+
+        .product-card .add-to-cart-btn {
+            background-color: #ff9900;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-card .add-to-cart-btn:hover {
+            background-color: #e68900;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #131921;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        footer ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        footer ul li a:hover {
+            color: #ff9900;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            font-size: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <a href="#"><img src="https://raw.githubusercontent.com/alrafaah/billowing-snow-fa70/ec4ec01de46e616b39c0e4008aee084a86adb2a1/public/picsvg_download.svg" alt="Alrafaah Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products...">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>Welcome to Alrafaah</h1>
+        <p>Your one-stop shop for all things premium and high-quality</p>
+        <a href="#" class="cta-button">Shop Now</a>
+    </section>
+
+    <!-- Product Section -->
+    <section class="products-section">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x200" alt="Product 1">
+            <div class="product-info">
+                <h3>Product 1</h3>
+                <p class="price">$99.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x200" alt="Product 2">
+            <div class="product-info">
+                <h3>Product 2</h3>
+                <p class="price">$149.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x200" alt="Product 3">
+            <div class="product-info">
+                <h3>Product 3</h3>
+                <p class="price">$59.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/250x200" alt="Product 4">
+            <div class="product-info">
+                <h3>Product 4</h3>
+                <p class="price">$199.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Alrafaah International LLC. All Rights Reserved.</p>
+        <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/96891916516" target="_blank" class="whatsapp-btn">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <!-- WhatsApp for Shahin -->
+    <a href="https://wa.me/96895480902" target="_blank" class="whatsapp-btn" style="bottom: 80px;">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+</body>
+
 </html>
