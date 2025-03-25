@@ -15,26 +15,17 @@
             box-sizing: border-box;
         }
 
-        /* Apply Apple-like font stack */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: "Inter", sans-serif;
             background-color: #fff;
             color: #333;
-            line-height: 1.6;
-            padding: 0;
-            margin: 0;
         }
 
-        /* Header Section */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 30px 40px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
             background-color: white;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
@@ -54,14 +45,6 @@
             color: #333;
             text-decoration: none;
             font-size: 18px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: color 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            color: #0071e3;
         }
 
         header .search-bar input {
@@ -69,16 +52,8 @@
             width: 300px;
             border-radius: 30px;
             border: 1px solid #ddd;
-            font-size: 16px;
-            transition: width 0.3s ease;
         }
 
-        header .search-bar input:focus {
-            width: 350px;
-            border-color: #0071e3;
-        }
-
-        /* Contact Section */
         .contact-section {
             padding: 100px 40px;
             text-align: center;
@@ -94,8 +69,6 @@
         .contact-section p {
             font-size: 18px;
             margin-bottom: 40px;
-            max-width: 800px;
-            margin: 0 auto 40px;
         }
 
         .contact-form {
@@ -114,8 +87,6 @@
             margin-bottom: 20px;
             border-radius: 5px;
             border: 1px solid #ddd;
-            font-size: 16px;
-            resize: vertical;
         }
 
         .contact-form button {
@@ -125,15 +96,8 @@
             border: none;
             border-radius: 5px;
             font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
-        .contact-form button:hover {
-            background-color: #005bb5;
-        }
-
-        /* Footer Section */
         footer {
             background-color: #1d1d1f;
             color: white;
@@ -144,44 +108,6 @@
         footer p {
             font-size: 14px;
             margin: 10px 0;
-        }
-
-        footer ul {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        footer ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-
-        footer ul li a:hover {
-            color: #0071e3;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header .logo img {
-                height: 50px;
-            }
-
-            header nav ul {
-                display: none;
-            }
-
-            .contact-section h1 {
-                font-size: 30px;
-            }
-
-            .contact-form button {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -212,7 +138,7 @@
         <p>If you have any questions or need assistance, feel free to reach out to us. We would love to hear from you!</p>
 
         <!-- Contact Form -->
-        <form class="contact-form">
+        <form class="contact-form" action="#" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -223,14 +149,8 @@
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Alrafaah International LLC. All Rights Reserved.</p>
-        <ul>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
     </footer>
 
 </body>
 
 </html>
-
