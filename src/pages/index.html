@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Alrafaah International LLC</title>
 
-    <!-- Linking Google Fonts for the "Inter" font -->
+    <!-- Font Import -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
@@ -18,9 +18,10 @@
             box-sizing: border-box;
         }
 
+        /* Apply Apple-like font stack */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f4f4f4;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #fff;
             color: #333;
             line-height: 1.6;
             margin: 0;
@@ -32,23 +33,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: white;
-            padding: 20px 40px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px 40px;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         header .logo img {
-            height: 60px;
+            height: 40px;
             width: auto;
         }
 
         header nav ul {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             list-style: none;
         }
 
@@ -56,20 +57,20 @@
             color: #333;
             text-decoration: none;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: color 0.3s ease;
         }
 
         header nav ul li a:hover {
-            color: #ff9900;
+            color: #0071e3;
         }
 
         header .search-bar input {
             padding: 12px 20px;
             width: 300px;
-            border-radius: 25px;
+            border-radius: 30px;
             border: 1px solid #ddd;
             font-size: 16px;
             transition: width 0.3s ease;
@@ -77,7 +78,7 @@
 
         header .search-bar input:focus {
             width: 350px;
-            border-color: #ff9900;
+            border-color: #0071e3;
         }
 
         /* Hero Section */
@@ -86,19 +87,17 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 150px 20px 100px;
+            padding: 200px 40px 100px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
 
         .hero-section h1 {
             font-size: 80px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 20px;
             letter-spacing: -1px;
             text-transform: uppercase;
@@ -107,14 +106,15 @@
         .hero-section p {
             font-size: 24px;
             font-weight: 300;
-            margin-bottom: 30px;
-            max-width: 600px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            opacity: 0.8;
         }
 
         .cta-button {
-            background-color: #ff9900;
+            background-color: #0071e3;
             color: white;
-            padding: 15px 40px;
+            padding: 20px 50px;
             border: none;
             border-radius: 50px;
             font-size: 18px;
@@ -125,15 +125,15 @@
         }
 
         .cta-button:hover {
-            background-color: #e68900;
-            transform: scale(1.1);
+            background-color: #005bb5;
+            transform: scale(1.05);
         }
 
         /* Product Section */
         .products-section {
-            padding: 80px 20px;
+            padding: 100px 40px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
             justify-items: center;
             max-width: 1200px;
@@ -144,22 +144,22 @@
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             width: 100%;
+            max-width: 350px;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
         }
 
         .product-card img {
             width: 100%;
-            height: 250px;
+            height: 300px;
             object-fit: cover;
-            border-bottom: 1px solid #ddd;
         }
 
         .product-card .product-info {
@@ -174,16 +174,16 @@
         }
 
         .product-card .price {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
-            color: #ff9900;
+            color: #0071e3;
             margin-bottom: 15px;
         }
 
         .product-card .add-to-cart-btn {
-            background-color: #ff9900;
+            background-color: #0071e3;
             color: white;
-            padding: 12px;
+            padding: 15px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
@@ -192,19 +192,19 @@
         }
 
         .product-card .add-to-cart-btn:hover {
-            background-color: #e68900;
+            background-color: #005bb5;
         }
 
         /* Footer Section */
         footer {
-            background-color: #131921;
+            background-color: #1d1d1f;
             color: white;
-            padding: 40px 20px;
+            padding: 60px 40px;
             text-align: center;
-            font-size: 14px;
         }
 
         footer p {
+            font-size: 14px;
             margin: 10px 0;
         }
 
@@ -224,7 +224,7 @@
         }
 
         footer ul li a:hover {
-            color: #ff9900;
+            color: #0071e3;
         }
 
         /* WhatsApp Floating Button */
@@ -262,10 +262,6 @@
                 display: none;
             }
 
-            .search-bar input {
-                width: 250px;
-            }
-
             .hero-section h1 {
                 font-size: 50px;
             }
@@ -275,19 +271,15 @@
             }
 
             .cta-button {
-                padding: 12px 30px;
+                padding: 15px 30px;
             }
 
-            .products-section {
-                grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            .product-card {
+                max-width: 100%;
             }
 
             footer ul {
                 flex-direction: column;
-            }
-
-            footer ul li a {
-                font-size: 14px;
             }
         }
     </style>
@@ -323,7 +315,7 @@
     <!-- Product Section -->
     <section class="products-section">
         <div class="product-card">
-            <img src="https://via.placeholder.com/250x250" alt="Product 1">
+            <img src="https://via.placeholder.com/350x350" alt="Product 1">
             <div class="product-info">
                 <h3>Product 1</h3>
                 <p class="price">$99.99</p>
@@ -332,7 +324,7 @@
         </div>
 
         <div class="product-card">
-            <img src="https://via.placeholder.com/250x250" alt="Product 2">
+            <img src="https://via.placeholder.com/350x350" alt="Product 2">
             <div class="product-info">
                 <h3>Product 2</h3>
                 <p class="price">$149.99</p>
@@ -341,7 +333,7 @@
         </div>
 
         <div class="product-card">
-            <img src="https://via.placeholder.com/250x250" alt="Product 3">
+            <img src="https://via.placeholder.com/350x350" alt="Product 3">
             <div class="product-info">
                 <h3>Product 3</h3>
                 <p class="price">$59.99</p>
@@ -350,7 +342,7 @@
         </div>
 
         <div class="product-card">
-            <img src="https://via.placeholder.com/250x250" alt="Product 4">
+            <img src="https://via.placeholder.com/350x350" alt="Product 4">
             <div class="product-info">
                 <h3>Product 4</h3>
                 <p class="price">$199.99</p>
