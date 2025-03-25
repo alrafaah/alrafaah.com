@@ -223,7 +223,7 @@
             border-radius: 50%;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: transform 0.3s ease; /* Add smooth transition for zoom effect */
             z-index: 1000;
         }
 
@@ -233,7 +233,7 @@
         }
 
         .whatsapp-btn:hover {
-            background-color: #25d366;
+            transform: scale(1.1); /* Slight zoom effect */
         }
 
         /* Responsive design */
