@@ -217,13 +217,13 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: transparent; /* Ensure no background color */
+            background-color: transparent !important; /* Ensuring no background */
             border: none;
             padding: 15px;
             border-radius: 50%;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            transition: transform 0.3s ease; /* Add smooth transition for zoom effect */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added smooth transition */
             z-index: 1000;
         }
 
@@ -233,9 +233,9 @@
         }
 
         .whatsapp-btn:hover {
-            transform: scale(1.1); /* Slight zoom effect */
-            background-color: transparent; /* Ensure no background color on hover */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Keep shadow consistent */
+            transform: scale(1.1); /* Zoom effect */
+            background-color: transparent !important; /* Ensuring no background on hover */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
         }
 
         /* Responsive design */
