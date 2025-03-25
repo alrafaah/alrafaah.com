@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Checkout Section -->
+  <main>
+    <section id="checkout-section" class="checkout-section">
+      <div class="container">
+        <div class="checkout-container">
+          <form id="checkout-form">
+            <h2 class="checkout-title">Checkout</h2>
+
+            <!-- Billing Information -->
+            <div class="form-section">
+              <h3>Billing Information</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" class="form-input" required>
+                  <div class="error-message" id="name-error"></div>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" class="form-input" required>
+                  <div class="error-message" id="email-error"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="address">Address</label>
+                  <input type="text" id="address" class="form-input" required>
+                  <div class="error-message" id="address-error"></div>
+                </div>
+                <div class="form-group">
+                  <label for="zip">Zip Code</label>
+                  <input type="text" id="zip" class="form-input" required>
+                  <div class="error-message" id="zip-error"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Information -->
+            <div class="form-section">
+              <h3>Payment Information</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="card-number">Card Number</label>
+                  <input type="text" id="card-number" class="form-input" required>
+                  <div class="error-message" id="card-number-error"></div>
+                </div>
+                <div class="form-group">
+                  <label for="expiration-date">Expiration Date</label>
+                  <input type="text" id="expiration-date" class="form-input" required>
+                  <div class="error-message" id="expiration-date-error"></div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" class="form-input" required>
+                  <div class="error-message" id="cvv-error"></div>
+                </div>
+                <div class="form-group">
+                  <label for="billing-address">Billing Address</label>
+                  <input type="text" id="billing-address" class="form-input" required>
+                  <div class="error-message" id="billing-address-error"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="place-order-btn">Place Order</button>
+          </form>
+
+          <!-- Checkout Summary -->
+          <div class="checkout-summary">
+            <h2>Order Summary</h2>
+            <div id="checkout-items">
+              <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <div class="checkout-total">
+              <div class="summary-row">
+                <span>Total</span>
+                <span id="checkout-total">$0.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Confirmation -->
+    <section id="order-confirmation" class="order-confirmation" style="display: none;">
+      <div class="container">
+        <div class="confirmation-icon">✔️</div>
+        <h2>Thank You for Your Order!</h2>
+        <p>Your order has been successfully placed. You will receive a confirmation email shortly.</p>
+        <div id="order-summary"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script>
+    // Dummy cart items (to be dynamically added from actual cart logic)
+    const cartItems = [
+      { name: 'Product 1', price: 50.00, quantity: 2 },
+      { name: 'Product 2', price: 30.00, quantity: 1 }
+    ];
+
+    const cartTotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
+    // Function to render cart items in the checkout summary
+    const renderCartItems = () => {
+      const checkoutItemsContainer = document.getElementById('checkout-items');
+      checkoutItemsContainer.innerHTML = '';
+      cartItems.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('checkout-item');
+        itemElement.innerHTML = `
+          <span>${item.name}</span> 
+          <span>${item.quantity} x $${item.price.toFixed(2)}</span>
+          <span>$${(item.price * item.quantity).toFixed(2)}</span>
+        `;
+        checkoutItemsContainer.appendChild(itemElement);
+      });
+      document.getElementById('checkout-total').textContent = `$${cartTotal.toFixed(2)}`;
+    };
+
+    // Render cart items on page load
+    renderCartItems();
+
+    // Form submission logic
+    const checkoutForm = document.getElementById('checkout-form');
+    const orderConfirmation = document.getElementById('order-confirmation');
+    const checkoutSection = document.getElementById('checkout-section');
+
+    checkoutForm.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent default form submission
+
+      // Process order (for now, just hide the checkout section and show confirmation)
+      checkoutSection.style.display = 'none';
+      orderConfirmation.style.display = 'block';
+
+      // Display order summary in confirmation page
+      const orderSummary = document.getElementById('order-summary');
+      orderSummary.innerHTML = `
+        <h3>Order Summary:</h3>
+        ${cartItems.map(item => `
+          <p>${item.name} - ${item.quantity} x $${item.price.toFixed(2)} = $${(item.price * item.quantity).toFixed(2)}</p>
+        `).join('')}
+        <p><strong>Total: $${cartTotal.toFixed(2)}</strong></p>
+      `;
+    });
+  </script>
+</body>
+</html>
