@@ -1,256 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Your trusted e-commerce partner for quality products." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Al Rafaah International LLC</title>
-
-  <!-- Favicon and App Icons -->
-  <link rel="icon" href="https://raw.githubusercontent.com/alrafaah/billowing-snow-fa70/refs/heads/main/public/favicon-32x32.png" />
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/alrafaah/billowing-snow-fa70/refs/heads/main/public/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/alrafaah/billowing-snow-fa70/refs/heads/main/public/android-chrome-192x192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="https://raw.githubusercontent.com/alrafaah/billowing-snow-fa70/refs/heads/main/public/android-chrome-512x512.png" />
-
   <style>
-    /* Reset some default styles */
+    /* Reset and base styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
+    
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
+      color: #333;
     }
-
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header styles */
     header {
-      background-color: white;  /* Changed to white */
-      padding: 20px;
-      color: black; /* Text color adjusted for better contrast */
-      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
+    }
+    
+    .header-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #ddd; /* Light border to separate header */
+      padding: 15px 0;
     }
-
-    header img {
-      max-height: 50px;
-      max-width: 100%;
-      height: auto;
-    }
-
-    header nav {
+    
+    .logo {
       display: flex;
-      gap: 20px;
+      align-items: center;
     }
-
-    header nav a {
-      color: black; /* Adjusted text color for better visibility */
-      font-size: 18px;
+    
+    .logo img {
+      height: 50px;
+      width: auto;
+      margin-right: 10px;
+    }
+    
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2563eb;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 25px;
+    }
+    
+    nav ul li a {
       text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.3s ease;
+      color: #4b5563;
+      font-weight: 500;
+      transition: color 0.3s;
     }
-
-    header nav a:hover {
-      color: #00bfae;
+    
+    nav ul li a:hover {
+      color: #2563eb;
     }
-
-    .hero-section {
+    
+    /* Hero section */
+    .hero {
       text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #00bfae, #1c1c1c);
-      color: white;
-      border-radius: 8px;
+      padding: 60px 0;
     }
-
-    .hero-section h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #1f2937;
     }
-
-    .hero-section p {
+    
+    .hero p {
       font-size: 1.2rem;
+      color: #6b7280;
+      max-width: 700px;
+      margin: 0 auto;
     }
-
-    .products {
+    
+    /* Products section */
+    .products-section {
+      padding: 40px 0 80px;
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #1f2937;
+    }
+    
+    .products-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 30px;
-      margin: 40px 20px;
     }
-
+    
     .product-card {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
+      border-radius: 8px;
       overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #fff;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
-
+    
     .product-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     }
-
+    
     .product-image {
       width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      height: 200px;
+      object-fit: cover;
     }
-
-    .product-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+    
+    .product-info {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
-
-    .product-card p {
-      color: #777;
-      font-size: 1rem;
-      margin-bottom: 15px;
-    }
-
-    .product-card span {
+    
+    .product-name {
       font-size: 1.2rem;
-      font-weight: bold;
-      color: #00bfae;
+      margin-bottom: 10px;
+      color: #1f2937;
     }
-
+    
+    .product-description {
+      color: #6b7280;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+    
+    .product-price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+    
     .add-to-cart {
-      background-color: #00bfae;
+      background-color: #2563eb;
       color: white;
       border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
+      padding: 10px 15px;
+      border-radius: 4px;
       cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
+      font-weight: 500;
+      transition: background-color 0.3s;
     }
-
+    
     .add-to-cart:hover {
-      background-color: #008f8b;
+      background-color: #1d4ed8;
     }
-
+    
+    /* Footer */
     footer {
-      background-color: #333;
-      color: white;
-      padding: 20px;
+      background-color: #f9fafb;
+      padding: 30px 0;
       text-align: center;
-      position: relative;
-      margin-top: 40px;
+      border-top: 1px solid #e5e7eb;
     }
-
-    /* Media Queries for Responsiveness */
-    @media screen and (max-width: 768px) {
-      .hero-section {
-        padding: 60px 20px;
+    
+    footer p {
+      color: #6b7280;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
       }
-
-      .hero-section h1 {
-        font-size: 2.5rem;
+      
+      nav ul {
+        margin-top: 15px;
       }
-
-      .product-card {
-        padding: 15px;
+      
+      nav ul li {
+        margin: 0 10px;
       }
-
-      .product-card h3 {
-        font-size: 1.3rem;
+      
+      .hero h1 {
+        font-size: 2rem;
       }
-
-      .product-card p {
-        font-size: 0.9rem;
-      }
-
-      .product-card span {
+      
+      .hero p {
         font-size: 1rem;
       }
-
-      header nav {
-        flex-direction: column;
-        gap: 10px;
+    }
+    
+    @media (max-width: 480px) {
+      .products-grid {
+        grid-template-columns: 1fr;
       }
-
-      header img {
-        max-width: 150px; /* Limit size for smaller screens */
+      
+      nav ul li {
+        margin: 0 8px;
       }
     }
   </style>
 </head>
-
 <body>
   <!-- Header Section -->
   <header>
-    <img src="https://raw.githubusercontent.com/alrafaah/billowing-snow-fa70/ec4ec01de46e616b39c0e4008aee084a86adb2a1/public/picsvg_download.svg" alt="Al Rafaah International LLC Logo" />
-    <nav>
-      <a href="/">Home</a>
-      <a href="#cart">Cart</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <!-- Using the provided logo URL -->
+          <img src="https://raw.githubusercontent.com/alrafaah/billowing-snow-fa70/ec4ec01de46e616b39c0e4008aee084a86adb2a1/public/picsvg_download.svg" alt="Al Rafaah International Logo">
+          <span class="logo-text">Al Rafaah International</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#cart">Cart</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
 
   <!-- Main Content -->
   <main>
-    <div class="hero-section">
-      <h1>Welcome to Al Rafaah International LLC</h1>
-      <p>Your trusted e-commerce partner for quality products.</p>
-    </div>
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>Welcome to Al Rafaah International LLC</h1>
+        <p>Your trusted e-commerce partner for quality products.</p>
+      </section>
 
-    <!-- Product Section -->
-    <section class="products">
-      <!-- Example Product Data -->
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200" alt="Product 1" class="product-image" />
-        <h3>Product 1</h3>
-        <p>A great product for all your needs.</p>
-        <span>$29.99</span>
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200" alt="Product 2" class="product-image" />
-        <h3>Product 2</h3>
-        <p>Another excellent choice for everyone.</p>
-        <span>$39.99</span>
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/300x200" alt="Product 3" class="product-image" />
-        <h3>Product 3</h3>
-        <p>An affordable yet top-quality item.</p>
-        <span>$49.99</span>
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
-    </section>
+      <!-- Products Section -->
+      <section class="products-section">
+        <h2 class="section-title">Our Products</h2>
+        <div class="products-grid" id="products-container">
+          <!-- Products will be dynamically inserted here -->
+        </div>
+      </section>
+    </div>
   </main>
 
   <!-- Footer Section -->
   <footer>
-    <p>© 2025 Al Rafaah International LLC. All rights reserved.</p>
+    <div class="container">
+      <p>© 2025 Al Rafaah International LLC. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
-    // Simple JavaScript for adding items to the cart
+    // Product data
+    const products = [
+      {
+        id: 1,
+        name: "Product 1",
+        price: 29.99,
+        image: "https://via.placeholder.com/300",
+        description: "A great product for all your needs."
+      },
+      {
+        id: 2,
+        name: "Product 2",
+        price: 39.99,
+        image: "https://via.placeholder.com/300",
+        description: "Another excellent choice for everyone."
+      },
+      {
+        id: 3,
+        name: "Product 3",
+        price: 49.99,
+        image: "https://via.placeholder.com/300",
+        description: "Premium quality for discerning customers."
+      },
+      {
+        id: 4,
+        name: "Product 4",
+        price: 19.99,
+        image: "https://via.placeholder.com/300",
+        description: "Budget-friendly option without compromising quality."
+      }
+    ];
+
+    // Cart functionality
     const cart = [];
 
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-      button.addEventListener('click', (e) => {
-        alert('Product added to cart');
-        // Logic to add the product to cart would go here
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      if (product) {
+        cart.push(product);
+        alert(`${product.name} added to cart!`);
+        console.log('Current cart:', cart);
+      }
+    }
+
+    // Render products
+    function renderProducts() {
+      const productsContainer = document.getElementById('products-container');
+      
+      products.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        
+        productCard.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" class="product-image">
+          <div class="product-info">
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-description">${product.description}</p>
+            <div class="product-price">$${product.price.toFixed(2)}</div>
+            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+          </div>
+        `;
+        
+        productsContainer.appendChild(productCard);
       });
+      
+      // Add event listeners to all "Add to Cart" buttons
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', (e) => {
+          const productId = parseInt(e.target.getAttribute('data-id'));
+          addToCart(productId);
+        });
+      });
+    }
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
     });
   </script>
 </body>
-
 </html>
