@@ -1,4 +1,3 @@
----
 const SITE_TITLE = "Al Rafaah International LLC";
 const SITE_DESCRIPTION = "Your trusted e-commerce partner for quality products.";
 
@@ -69,6 +68,8 @@ const products = [
 
       header img {
         max-height: 50px;
+        max-width: 100%;  /* Ensure it scales properly */
+        height: auto;
       }
 
       header nav {
@@ -205,6 +206,10 @@ const products = [
           flex-direction: column;
           gap: 10px;
         }
+
+        header img {
+          max-width: 150px; /* Limit size for smaller screens */
+        }
       }
     </style>
   </head>
@@ -212,7 +217,7 @@ const products = [
   <body>
     <!-- Header Section -->
     <header>
-      <img src="https://raw.githubusercontent.com/alrafaah/billowing-snow-fa70/refs/heads/main/public/android-chrome-512x512.png" alt="Al Rafaah International LLC Logo" />
+      <img src="https://raw.githubusercontent.com/alrafaah/billowing-snow-fa70/ec4ec01de46e616b39c0e4008aee084a86adb2a1/public/picsvg_download.svg" alt="Al Rafaah International LLC Logo" />
       <nav>
         <a href="/">Home</a>
         <a href="#cart">Cart</a>
